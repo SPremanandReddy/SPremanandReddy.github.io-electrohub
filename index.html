@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+`   <link rel="stylesheet" href="electricalShop.css">
+    <title>ElectroHub</title>
+    
+  <link rel="shortcut icon" href="images\shopLogo.jpeg" type="image/jpeg">
+
+
+
+  <link rel="preload" as="image" href="images\shopLogo.jpeg">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top ">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images\shopLogo.jpeg" class="food-munch-logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" id="navItem1" href="#wcuSection">
+                        Why Choose Us?
+                        <span class="sr-only">(current)</span>
+                    </a>
+                    <a class="nav-link" href="#exploreMenuSection" id="navItem2">Explore Menu</a>
+                    <a class="nav-link" href="#deliveryPaymentSection" id="navItem3">Delivery & Payment</a>
+                    <a class="nav-link" href="#followUsSection" id="navItem4">Follow Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="carouselExampleControls" class="carousel slide banner_carousel" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://res.cloudinary.com/dbxsscuoe/image/upload/v1690368333/shop_banner_fg7twv.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://res.cloudinary.com/dbxsscuoe/image/upload/v1690368333/shop_banner_fg7twv.jpg" class="d-block w-100" alt="...">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="https://res.cloudinary.com/dbxsscuoe/image/upload/v1690368333/shop_banner_fg7twv.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    
+    <div class="wcu-section pt-5 pb-5" id="wcuSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="wcu-section-heading">Why Choose Us?</h1>
+                    <p class="wcu-section-description">
+                        We do sell enormous suguna motors in various fields such as Agriculture, Domestic,
+                        Motors and Pumps, Industrial and Special Products
+                    </p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="wcu-card p-3 mb-3">
+                        <img src="data:image/jpeg;base64,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" class="wcu-card-image" />
+                        <h1 class="wcu-card-title mt-3">Electrical Water Motor Service</h1>
+                        <p class="wcu-card-description">
+                            Our Electricians initially check the site and grasp the issue behind it.
+                            After explaining to you, they will commence the work. Everything will be done perfectly
+                            without any delay. They have an excellent knowledge about all the electricial equipments.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="wcu-card p-3 mb-3">
+                        <img src="https://images.jdmagicbox.com/quickquotes/images_main/suguna-well-jet-pump-2217123423-q8l4rmad.jpg" class="wcu-card-image" />
+                        <h1 class="wcu-card-title mt-3">Branded Suguna Motors</h1>
+                        <p class="wcu-card-description">
+                            We are the authorised dealer of Suguna Company for all kind of motors. Each and every electrical water motors
+                            is manufactured by using a good quality of material and perfectly calculations behind it. It has copper winding, Copper Router,
+                            pumps with various body material because it depends on our usage.
+
+                        </p>
+                        <p class="quote">Once you purchased, you will never it.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="wcu-card p-3 mb-3">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/offers-img.png" class="wcu-card-image" />
+                        <h1 class="wcu-card-title mt-3">Best Offers</h1>
+                        <p class="wcu-card-description">
+                            When you visit the place directly,
+                            and speak to SAMA KONDAL REDDY, then you will get upto
+                            <span class="offers">50% OFF</span>
+
+                        </p>
+                    </div>
+                </div>
+                <div class="basic_model_banner m-4">
+                    <img class="" src="" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="explore-menu-section pt-5 pb-5" id="exploreMenuSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="menu-section-heading">Explore Menu</h1>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="shadow menu-item-card p-3 mb-3">
+                        <a href="" data-toggle="modal" data-target="#exampleModal1"><img src="https://res.cloudinary.com/dbxsscuoe/image/upload/v1690368157/motor_zcijct.jpg" class="menu-item-image image-hover w-100" data-target="#exampleModal1" /></a>
+                        <h1 class="menu-card-title">Self Priming Monoblock Pump SP 0.5 hp</h1>
+                        <a href="" class="menu-item-link" data-toggle="modal" data-target="#exampleModal1">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog mt-5">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title thanking-customers-section-modal-title" id="exampleModalLabel">
+                                            Details:
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Product Specification <br>
+                                            <strong>Motor Phase</strong> Single Phase, <br>
+                                            <strong>Power</strong> 0.37 KW <br>
+                                            <strong>Model Name/Number</strong> SP <br>
+                                            <strong>Maximum Discharge Flow</strong> 51 LPM<br>
+                                            <strong>Body Material</strong> Cast Iron<br>
+                                            <strong>Suction Lift</strong> 8 M<br>
+                                            <strong>Product Description</strong><br>
+                                            Being a trustworthy name in the industry, we are able to offer a superior quality array of Self Priming Monoblock Pump to our patrons.
+                                            <br><strong>About Us</strong> <br>
+                                            Established in year 2008, SAI RAMA MARKETING AND SERVICES is involved in the area of Wholesale Trading a broad plethora of Monoblock Pump, Submersible Pump, Motor Starters, Pressure Pump etc. In their development process, we assure that only top notch material is used by our professionals along with ultra-modern tools and machinery. Besides this, we check these on a variety of grounds before finally shipping them at the destination of our customers.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="shadow menu-item-card p-3 mb-3">
+                        <a href="" data-toggle="modal" data-target="#exampleModal2"><img src="https://res.cloudinary.com/dbxsscuoe/image/upload/v1690428801/self_priming_.5hp_side_ylduh0.png" class="menu-item-image image-hover w-100" /></a>
+                        <h1 class="menu-card-title">SUSI MASTER CENTRIFUGAL REGENERATIVE PUMP 0.5 HP</h1>
+                        <a href="" class="menu-item-link" data-toggle="modal" data-target="#exampleModal2">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog mt-5">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title thanking-customers-section-modal-title" id="exampleModalLabel">
+                                            Details:
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Product Specification <br>
+                                            <strong>Motor Phase: </strong> Single Phase, <br>
+                                            <strong>Power: </strong> 0.75 KW <br>
+                                            <strong>Model Name/Number: </strong> SPM <br>
+                                            <strong>Maximum Discharge Flow: </strong> 1080 LPH<br>
+                                            <strong>Body Material: </strong> Cast Iron<br>
+                                            <strong>Suction Lift: </strong> 25 M<br>
+                                            <strong>Product Description: </strong><br>
+                                            Being a trustworthy name in the industry, we are able to offer a superior quality array of Self Priming Monoblock Pump to our patrons.
+                                            <br><strong>About Us: </strong> <br>
+                                            Established in year 2001, Manoj Agencies is involved in the area of Wholesale Trading a broad plethora of Monoblock Pump, Submersible Pump, Motor Starters, Pressure Pump etc. In their development process, we assure that only top notch material is used by our professionals along with ultra-modern tools and machinery. Besides this, we check these on a variety of grounds before finally shipping them at the destination of our customers.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <a href="" data-toggle="modal" data-target="#exampleModal3"> <img src="https://res.cloudinary.com/dbxsscuoe/image/upload/v1690428799/monoblock_motor_upper_pic_ocxuy3.jpg" class="menu-item-image image-hover w-100" /> </a>
+                        <h1 class="menu-card-title">Suguna Centrifugal Monoblock Pumps, 0.5 hp</h1>
+                        <a href="" class="menu-item-link" data-toggle="modal" data-target="#exampleModal3">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog mt-5">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title thanking-customers-section-modal-title" id="exampleModalLabel">
+                                            Details:
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Product Specification <br>
+                                            <strong>Motor Phase: </strong> Single Phase <br>
+                                            <strong>Power: </strong> 0.375 KW <br>
+                                            <strong>Model Name/Number: </strong> SM 050 <br>
+                                            <strong>Maximum Discharge Flow: </strong> 1001 - 5000 LPM<br>
+                                            <strong>Body Material: </strong> Cast Iron<br>
+
+                                            <strong>Product Description: </strong><br>
+                                            Being a trustworthy name in the industry, we are able to offer a superior quality array of Self Priming Monoblock Pump to our patrons.
+                                            <br><strong>About Us: </strong> <br>
+                                            Established in year 2008, SAI RAMA MARKETING AND SERVICES is involved in the area of Wholesale Trading a broad plethora of Monoblock Pump, Submersible Pump, Motor Starters, Pressure Pump etc. In their development process, we assure that only top notch material is used by our professionals along with ultra-modern tools and machinery. Besides this, we check these on a variety of grounds before finally shipping them at the destination of our customers.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <a href="" data-toggle="modal" data-target="#exampleModal4"><img src="https://5.imimg.com/data5/ANDROID/Default/2023/6/316179422/UL/LZ/MZ/15800698/product-jpeg-500x500.jpg" class="menu-item-image image-hover w-100" /> </a>
+                        <h1 class="menu-card-title">Single Phase 0.5-1 HP 1hp Open Well Submersible.pump</h1>
+                        <a href="" class="menu-item-link" data-toggle="modal" data-target="#exampleModal4">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog mt-5">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title thanking-customers-section-modal-title" id="exampleModalLabel">
+                                            Details:
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Product Specification <br>
+                                            <strong>Motor Phase: </strong> Single Phase <br>
+
+                                            <strong>Motor Horse Power</strong> 0.5 - 1 hp<br>
+                                            <strong> Discharge Outlet size</strong> : 1''<br>
+
+                                            <strong>Product Description: </strong><br>
+                                            Being a trustworthy name in the industry, we are able to offer a superior quality array of Self Priming Monoblock Pump to our patrons.
+                                            <br><strong>About Us: </strong> <br>
+                                            Established in year 2008, SAI RAMA MARKETING AND SERVICES is involved in the area of Wholesale Trading a broad plethora of Monoblock Pump, Submersible Pump, Motor Starters, Pressure Pump etc. In their development process, we assure that only top notch material is used by our professionals along with ultra-modern tools and machinery. Besides this, we check these on a variety of grounds before finally shipping them at the destination of our customers.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="data:image/jpeg;base64,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" class="menu-item-image image-hover w-100" />
+                        <h1 class="menu-card-title">MonoBlock high speed pumps</h1>
+                        <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog mt-5">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title thanking-customers-section-modal-title" id="exampleModalLabel">
+                                            Details:
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Product Specification <br>
+                                            <strong>Motor Phase: </strong> Single Phase <br>
+
+                                            <strong>Motor Horse Power</strong> 0.5 - 1 hp<br>
+                                            <strong> Discharge Outlet size</strong> : 1''<br>
+
+                                            <strong>Product Description: </strong><br>
+                                            Being a trustworthy name in the industry, we are able to offer a superior quality array of Self Priming Monoblock Pump to our patrons.
+                                            <br><strong>About Us: </strong> <br>
+                                            Established in year 2008, SAI RAMA MARKETING AND SERVICES is involved in the area of Wholesale Trading a broad plethora of Monoblock Pump, Submersible Pump, Motor Starters, Pressure Pump etc. In their development process, we assure that only top notch material is used by our professionals along with ultra-modern tools and machinery. Besides this, we check these on a variety of grounds before finally shipping them at the destination of our customers.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <a href="" data-toggle="modal" data-target="#exampleModal6"> <img src="https://res.cloudinary.com/dbxsscuoe/image/upload/v1690428804/starter_with_waterlevel_controller_vbvhby.png" class="menu-item-image image-hover w-100" /> </a>
+                        <h1 class="menu-card-title" data-toggle="modal" data-target="#exampleModal6">Starters for openwell and borewell motors</h1>
+                        <a href="" class="menu-item-link" data-toggle="modal" data-target="#exampleModal6">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                        <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog mt-5">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title thanking-customers-section-modal-title" id="exampleModalLabel">
+                                            Details:
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><strong>Product Specification</strong> <br>
+                                            Different starters are available at us,
+                                            Such as 1 hp, 1.5 hp, 2 hp and with timers are also available,
+                                            3phase starters with timers,
+                                            Automatic phase change over protection Starters,
+                                            Water level controllers are also broadly available. <br>
+                                            <strong>Product Description: </strong><br>
+                                            Being a trustworthy name in the industry, we are able to offer a superior quality array of Self Priming Monoblock Pump to our patrons.
+                                            <br><strong>About Us: </strong> <br>
+                                            Established in year 2008, SAI RAMA MARKETING AND SERVICES is involved in the area of Wholesale Trading a broad plethora of Monoblock Pump, Submersible Pump, Motor Starters, Pressure Pump etc. In their development process, we assure that only top notch material is used by our professionals along with ultra-modern tools and machinery. Besides this, we check these on a variety of grounds before finally shipping them at the destination of our customers.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://images.jdmagicbox.com/quickquotes/images_main/suguna-well-jet-pump-2217123423-q8l4rmad.jpg" class="menu-item-image image-hover w-100" />
+                        <h1 class="menu-card-title">Agricultural Jet pumps</h1>
+                        <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog mt-5">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title thanking-customers-section-modal-title" id="exampleModalLabel">
+                                            Details:
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Product Specification <br>
+                                            <strong>Motor Phase: </strong> Single Phase <br>
+
+                                            <strong>Motor Horse Power</strong> 0.5 - 1 hp<br>
+                                            <strong> Discharge Outlet size</strong> : 1''<br>
+
+                                            <strong>Product Description: </strong><br>
+                                            Being a trustworthy name in the industry, we are able to offer a superior quality array of Self Priming Monoblock Pump to our patrons.
+                                            <br><strong>About Us: </strong> <br>
+                                            Established in year 2008, SAI RAMA MARKETING AND SERVICES is involved in the area of Wholesale Trading a broad plethora of Monoblock Pump, Submersible Pump, Motor Starters, Pressure Pump etc. In their development process, we assure that only top notch material is used by our professionals along with ultra-modern tools and machinery. Besides this, we check these on a variety of grounds before finally shipping them at the destination of our customers.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://5.imimg.com/data5/RQ/VA/RJ/SELLER-71162840/bore-well-submersible-pumps-v4-sigle-phase-500x500.jpg" class="menu-item-image image-hover w-100" />
+                        <h1 class="menu-card-title">Submersible motors</h1>
+                        <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog mt-5">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title thanking-customers-section-modal-title" id="exampleModalLabel">
+                                            Details:
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Product Specification <br>
+                                            <strong>Motor Phase: </strong> Single Phase <br>
+
+                                            <strong>Motor Horse Power</strong> 0.5 - 1 hp<br>
+                                            <strong> Discharge Outlet size</strong> : 1''<br>
+
+                                            <strong>Product Description: </strong><br>
+                                            Being a trustworthy name in the industry, we are able to offer a superior quality array of Self Priming Monoblock Pump to our patrons.
+                                            <br><strong>About Us: </strong> <br>
+                                            Established in year 2008, SAI RAMA MARKETING AND SERVICES is involved in the area of Wholesale Trading a broad plethora of Monoblock Pump, Submersible Pump, Motor Starters, Pressure Pump etc. In their development process, we assure that only top notch material is used by our professionals along with ultra-modern tools and machinery. Besides this, we check these on a variety of grounds before finally shipping them at the destination of our customers.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="healthy-food-section pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5">
+                    <div class="text-center">
+                        <!-- <img src="https://res.cloudinary.com/dbxsscuoe/image/upload/v1690458396/motors_2_plhktz.jpg" class="healthy-food-section-img" /> -->
+                        <iframe width="100%" 
+                        height="100%"
+                         src="images\motor.mp4"
+                          title="YouTube video player"
+                          frameborder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                           referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-12 col-md-7">
+                    <h1 class="healthy-food-section-heading">
+                        Dynamic, Jet Speed, Extra Power Water Motors and Inverters
+                    </h1>
+                    <p class="healthy-food-section-description">
+                        Say No to local motors which doesn't work wel without Quality and Replacement.
+                        Want To Save Money for Repairs and electricity bill.
+                        Just Be Hassle Free by purchasing our products which is available at your door step. 
+                        We are known as officially recognized dealer of suguna motors and luminious inverters. 
+                    </p>
+                    <button class="custom-button">Watch Video</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="delivery-and-payment-section pt-5 pb-5" id="deliveryPaymentSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5 order-1 order-md-2">
+                    <div class="text-center">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/delivery-payment-section-img.png" class="delivery-and-payment-section-img" />
+                
+                    </div>
+                </div>
+                <div class="col-12 col-md-7 order-2 order-md-1">
+                    <h1 class="delivery-and-payment-section-heading">
+                        Delivery and Payment
+                    </h1>
+                    <p class="delivery-and-payment-section-description">
+                        Enjoy hassle-free payment with the plenitude of payment options
+                        available for you. Get live tracking and locate your food on a
+                        live map. It's quite a sight to see your food arrive to your door.
+                        Plus, you get a 5% discount on every order every time you pay
+                        online.
+                    </p>
+                    <button class="custom-button">Order Now</button>
+                    <div class="mt-3">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/visa-card-img.png" class="payment-card-img" />
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/master-card-img.png" class="payment-card-img" />
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/paypal-card-img.png" class="payment-card-img" />
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/american-express-img.png" class="payment-card-img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section service" aria-label="service">
+        <div class="container text-center">
+
+          <img src="https://www.jagranimages.com/images/newimg/19012023/19_01_2023-best_water_pump_in_india_price,_features_and_specifications_23301889.jpg" width="300" height="200" loading="lazy" alt="" class="img">
+
+          <h2 class="h2 section-title">
+            <span class="span">What Your Home Needs,</span> when they need it.
+          </h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="images\service-icon-1.png" width="70" height="70" loading="lazy"
+                    alt="service icon">
+                </figure>
+
+                <h3 class="h3 card-title">Free Same-Day Delivery</h3>
+
+                <p class="card-text">
+                  Order by 2pm local time to get free delivery on orders $35+ today.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="images\service-icon-2.png" width="70" height="70" loading="lazy"
+                    alt="service icon">
+                </figure>
+
+                <h3 class="h3 card-title">30 Day Return</h3>
+
+                <p class="card-text">
+                  35% off your first order plus 5% off all future orders.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="images\service-icon-3.png" width="70" height="70" loading="lazy"
+                    alt="service icon">
+                </figure>
+
+                <h3 class="h3 card-title">Security payment</h3>
+
+                <p class="card-text">
+                  25% off your online order of $50+. Available at most locations.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="images\service-icon-4.png" width="70" height="70" loading="lazy"
+                    alt="service icon">
+                </figure>
+
+                <h3 class="h3 card-title">24/7 Support</h3>
+
+                <p class="card-text">
+                  Shop online to get orders over $35 shipped fast and free.
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    <div class="thanking-customers-section pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+                    <h1 class="thanking-customers-section-heading">
+                        Thank you for being a valuable customer to us.
+                    </h1>
+                    <p class="thanking-customers-section-description">
+                        We have a surprise gift for you
+                    </p>
+                    <div class="d-md-none">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/thanking-customers-section-img.png" class="thanking-customers-section-img" />
+                    </div>
+                    <div>
+                        <button type="button" class="custom-button" data-toggle="modal" data-target="#exampleModal">
+                            Redeem Gift
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog mt-5">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title thanking-customers-section-modal-title" id="exampleModalLabel">
+                                            Gift Voucher
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/gift-voucher-img.png" class="w-100" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 d-none d-md-block">
+                    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/thanking-customers-section-img.png" class="thanking-customers-section-img" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="follow-us-section pt-5 pb-5" id="followUsSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="follow-us-section-heading">Follow Us</h1>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex flex-row justify-content-center">
+                        <div class="follow-us-icon-container icon">
+
+                            <a href="https://wa.me/+919440122387"><i class="fa-brands fa-whatsapp" style="color:rgb(252, 17, 17);"></i></a>
+                        </div>
+                        <div class="follow-us-icon-container icon">
+                            <a href="https://instagram.com/sairamamarketingandservices?igshid=MzRlODBiNWFlZA=="><i class="fab fa-instagram "></i></a>
+                        </div>
+                        <div class="follow-us-icon-container icon">
+                            <a href="https://www.facebook.com/profile.php?id=100071517851703"><i class="fab fa-facebook "></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-section pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img src="https://res.cloudinary.com/dbxsscuoe/image/upload/v1690368943/shop_logo_wdog7d.jpg" class="food-munch-logo" />
+                    <h1 class="footer-section-mail-id">sairamamarketing@gmail.com</h1>
+                    <p class="footer-section-address">
+                        PH: 9440122387, plot no: 239, Sri vivekananda nagar, Opposite to Newton's high school, Madhapur, Hyderabad - 500018, Telanagana
+                    </p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.9869751025017!2d78.3991899!3d17.460337499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9171a5a20f03%3A0xd5003eecfa33248!2sSai%20Rama%20Marketing%20%26%20Services!5e0!3m2!1sen!2sin!4v1742193827801!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
